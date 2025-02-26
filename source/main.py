@@ -9,6 +9,6 @@ def main():
 
 if __name__ == "__main__":
     map = map.map()
-    spaceship = map.makeMap(5)
+    spaceship = map.makeMap(10)
     map.printMap(logic.placeTraps(spaceship))
     
