@@ -1,6 +1,6 @@
 # Station 404 🚀
     
-  ![DALL·E-2025-02-26-12 26](https://github.com/user-attachments/assets/2402336b-830a-4012-bb27-bdd60330ac0b)
+<img src="https://github.com/user-attachments/assets/2402336b-830a-4012-bb27-bdd60330ac0b" width="400" alt="Station 404 Image">
 
 
 A thrilling console-based exploration game where you navigate through an abandoned space station using your scanner to avoid deadly traps.
