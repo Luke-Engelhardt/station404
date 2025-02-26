@@ -1,4 +1,4 @@
-import map
+import gamemap
 import logic
 
 def __init__(self):
@@ -8,7 +8,13 @@ def main():
     pass
 
 if __name__ == "__main__":
-    map = map.map()
+    map = gamemap.map()
+    solution = gamemap.map()
     spaceship = map.makeMap(10)
-    map.printMap(logic.placeTraps(spaceship))
+    solution = logic.placeTraps(solution.makeMap(10))
+    map.printMap(spaceship)
+    map.printMap(logic.markField(3, 5, spaceship))
+    logic.welcome()
+    logic.mainMenu()
+    
     
