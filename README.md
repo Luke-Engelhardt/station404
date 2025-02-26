@@ -5,7 +5,7 @@ A thrilling console-based exploration game where you navigate through an abandon
 
 ## About the Game
 
-In Station 404, you find yourself in a mysterious abandoned space station filled with hidden mechanical traps. Your mission is to methodically scan and identify all safe areas while avoiding the deadly traps that could end your mission instantly.
+In Station 404, you find yourself in a mysterious abandoned space station filled with hidden traps. Your mission is to  scan and identify all safe areas while avoiding the deadly traps that could end your mission instantly.
 
 
 ### How to Play
