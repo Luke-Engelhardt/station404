@@ -1,11 +1,7 @@
 # Station 404 🚀
     
-┌──────── STATION 404 ───────┐    
-│ [█] SCANNING IN PROGRESS   │    
-│ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀   │    
-│ DANGER LEVEL: CRITICAL     │    
-│ PROCEED WITH CAUTION       │    
-└────────────────────────────┘    
+  ![DALL·E-2025-02-26-12 26](https://github.com/user-attachments/assets/2402336b-830a-4012-bb27-bdd60330ac0b)
+
 
 A thrilling console-based exploration game where you navigate through an abandoned space station using your scanner to avoid deadly traps.
 
