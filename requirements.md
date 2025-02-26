@@ -1,4 +1,4 @@
-### Spiel: Verlassene Raumstation (Minesweeper)
+### Spiel: Verlassene Raumstation
 
 #### Abgabe: 31.03.2025
 
