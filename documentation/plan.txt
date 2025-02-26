@@ -1,0 +1,33 @@
+- Project Structure:
+
+- Create separate files for different concerns (game logic, display, main game loop)
+- Keep the code modular for easier testing
+- Core Components to develop in this order:
+
+a. Board Representation
+
+- Use nested lists (2D array) for the game board
+- Consider using simple characters for different states ('?' for hidden, '*' for traps, numbers for hints)
+b. Console Display
+
+- Use print() with proper formatting
+- Consider using os.system('clear') for screen clearing (makes the display cleaner)
+- Create a simple grid display using ASCII characters
+c. Game Logic
+
+- Random trap placement (using random module)
+- Neighbor counting function
+- Game state tracking (ongoing, won, lost)
+d. User Input
+
+- Use input() for getting coordinates
+- Implement input validation
+- Consider using a simple coordinate system (like "A1", "B2", etc.)
+- Development Steps:
+
+1. Start with just displaying an empty board
+2. Add trap placement
+3. Implement scanning mechanism
+4. Add win/lose conditions
+5. Add input validation
+6. Enhance user interface
