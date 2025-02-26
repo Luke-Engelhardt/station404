@@ -34,3 +34,6 @@ git clone https://github.com/Luke-Engelhardt/station404
 pip install -r requirements.txt
 ```
 3. Have Fun!
+```bash
+python3 main.py
+```
