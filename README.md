@@ -1,7 +1,5 @@
 # Station 404 🚀
     
-<img src="https://github.com/user-attachments/assets/2402336b-830a-4012-bb27-bdd60330ac0b" width="400" alt="Station 404 Image">
-
 
 A thrilling console-based exploration game where you navigate through an abandoned space station using your scanner to avoid deadly traps.
 
@@ -16,6 +14,8 @@ In Station 404, you find yourself in a mysterious abandoned space station filled
 - Each safe scan reveals a number indicating how many dangerous areas are adjacent
 - Avoid triggering traps - one wrong scan and it's game over!
 - Victory is achieved by revealing all safe areas
+
+<img src="https://github.com/user-attachments/assets/2402336b-830a-4012-bb27-bdd60330ac0b" width="400" alt="Station 404 Image">
 
 ## Technical Requirements
 
