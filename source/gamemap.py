@@ -12,8 +12,8 @@ class map:
     
     def printMap(self, map):
         size = len(map)
-        print("   " + " ".join(str(i) for i in range(size)))
-        border = "  " + "-" * (size * 2 + 1)
+        print("    " + " ".join(str(i) for i in range(size)))
+        border = "  " + "-" * (size * 2 + 2)  # Added +2 instead of +1
         print(border)
         
         for i in range(size):
