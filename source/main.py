@@ -25,7 +25,6 @@ def main():
     solution = gamemap.map()
     spaceship = map.makeMap(8)
     solution = logic.placeTraps(solution.makeMap(8))
-    map.printMap(solution)
     playerWon = False
     
     while not logic.checkWin(spaceship, solution):
