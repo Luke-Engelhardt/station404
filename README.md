@@ -35,5 +35,32 @@ pip install -r requirements.txt
 ```
 3. Have Fun!
 ```bash
-python3 main.py
+python3 source/main.py
 ```
+
+## INSTRUCTIONS  
+
+Welcome to **STATION404**, an abandoned space station filled with deadly traps.  
+Your mission: **navigate the wreckage and locate all the traps before it's too late.**  
+
+---
+
+### 🛠 GAME ACTIONS  
+
+#### 1️⃣ SHOW SPACESHIP  
+Displays the current **map** of the spaceship, showing explored areas and marked traps.  
+
+#### 2️⃣ SCAN FIELD `(x, y)`  
+Scans the selected coordinates for traps:  
+   - ❌ **Trap detected** → **GAME OVER**  
+   - ⚠️ **Nearby traps** → Shows the number of adjacent traps  
+   - ✅ **Safe zone** → The field becomes empty  
+
+#### 3️⃣ MARK FIELD `(x, y)`  
+Places an `X` on the selected coordinates to **mark a suspected trap**.  
+
+---
+
+#### ⚡ CAUTION  
+One wrong move could seal your fate.  
+**Think, scan, and mark wisely to escape STATION404.**  
