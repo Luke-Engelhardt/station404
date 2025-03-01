@@ -43,7 +43,7 @@ def getNeighbourTraps(spaceship, x, y):
     
 def checkWin(spaceship, solution):
     for trap in getTraps(solution):
-        if spaceship[trap[0]][trap[1]] != 2:
+        if spaceship[trap[0]][trap[1]] != 'X':
             return False
     return True
   

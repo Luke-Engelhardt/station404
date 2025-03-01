@@ -45,6 +45,7 @@ def main():
             x = int(input("Please enter the y coordinate: "))  
             if logic.scanField(x, y, spaceship, solution) == 1:
                 print("You stepped into a trap. GAME OVER!")
+                input('Press ENTER to go back to the main menu...')
                 break
             else:
                 print("You didn't find a trap.")
