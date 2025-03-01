@@ -1,27 +1,31 @@
 import random
 import os
 
+
 def placeTraps(spaceship):
     for i in range(len(spaceship)):
         for j in range(len(spaceship)):
             if random.randint(1, 7) == 1:
                 spaceship[i][j] = 1
     return spaceship
-    
+
+
 def scanField(x, y, spaceship, solution):
     neighbourTraps = getNeighbourTraps(solution, x, y)
     if solution[int(x)][int(y)] == 1:
         return 1
     else:
         if neighbourTraps == 0:
-            spaceship[int(x)][int(y)] = ' '
+            spaceship[int(x)][int(y)] = " "
         else:
             spaceship[int(x)][int(y)] = neighbourTraps
         return 0
 
+
 def markField(x, y, spaceship):
-    spaceship[int(x)][int(y)] = 'X'
+    spaceship[int(x)][int(y)] = "X"
     return spaceship
+
 
 def getTraps(spaceship):
     traps = []
@@ -30,25 +34,30 @@ def getTraps(spaceship):
             if spaceship[i][j] == 1:
                 traps.append((i, j))
     return traps
- 
+
+
 def getNeighbourTraps(spaceship, x, y):
     neighbourTraps = 0
     size = len(spaceship)
-    for i in range(max(0, x-1), min(size, x+2)):
-        for j in range(max(0, y-1), min(size, y+2)):
-            if (i != x or j != y) and spaceship[i][j] == 1:  #gescannte zelle überspringen
+    for i in range(max(0, x - 1), min(size, x + 2)):
+        for j in range(max(0, y - 1), min(size, y + 2)):
+            if (i != x or j != y) and spaceship[i][
+                j
+            ] == 1:  # gescannte zelle überspringen
                 neighbourTraps += 1
     return neighbourTraps
-     
-    
+
+
 def checkWin(spaceship, solution):
     for trap in getTraps(solution):
-        if spaceship[trap[0]][trap[1]] != 'X':
+        if spaceship[trap[0]][trap[1]] != "X":
             return False
     return True
-  
+
+
 def welcome():
-    print(''' 
+    print(
+        """ 
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓██████████████▓▒░░▒▓████████▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
@@ -57,9 +66,11 @@ def welcome():
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
  ░▒▓█████████████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░ 
                                                                                                           
-                                                                                                          ''') 
-    print('')         
-    print(''' 
+                                                                                                          """
+    )
+    print("")
+    print(
+        """ 
 ░▒▓████████▓▒░▒▓██████▓▒░  
    ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ 
    ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ 
@@ -69,9 +80,11 @@ def welcome():
    ░▒▓█▓▒░   ░▒▓██████▓▒░  
                            
                            
-          ''')
-    print('')
-    print(''' 
+          """
+    )
+    print("")
+    print(
+        """ 
  ░▒▓███████▓▒░▒▓████████▓▒░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓██████▓▒░░▒▓███████▓▒░       ░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
@@ -81,11 +94,14 @@ def welcome():
 ░▒▓███████▓▒░   ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░             ░▒▓█▓▒░▒▓████████▓▒░      ░▒▓█▓▒░ 
                                                                                                                                   
                                                                                                                                   
-          ''')
+          """
+    )
+
 
 def instructions():
     clearTerminal()
-    print('''\
+    print(
+        """\
 STATION404 - INSTRUCTIONS
 
 Welcome to STATION404, an abandoned space station filled with deadly traps.
@@ -105,12 +121,13 @@ GAME ACTIONS:
    - Places an 'X' on the selected coordinates to mark a suspected trap location.
 
 Survive, map the traps, and escape STATION404!
-''')
+"""
+    )
     input("Press enter to continue...")
 
+
 def clearTerminal():
-    if os.name == 'nt':
-        os.system('cls')
+    if os.name == "nt":
+        os.system("cls")
     else:
-        os.system('clear')
-    
+        os.system("clear")
