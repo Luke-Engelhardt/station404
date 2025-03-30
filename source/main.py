@@ -2,7 +2,6 @@ from source import gamemap
 from source import logic
 
 
-
 def __init__(self):
     pass
 
