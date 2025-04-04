@@ -3,8 +3,8 @@ import unittest
 
 
 class TestLogic(unittest.TestCase):
-    def test_placeTraps(self):
-        map = [
+    def test_placeTraps(self) -> None:
+        map: list[list[int | str]] = [
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
@@ -19,15 +19,15 @@ class TestLogic(unittest.TestCase):
                 else:
                     self.assertTrue(result[i][j] == 0)
 
-    def test_scanField(self):
-        map = [
+    def test_scanField(self) -> None:
+        map: list[list[int | str]] = [
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
         ]
-        solution = [
+        solution: list[list[int | str]] = [
             [1, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
@@ -37,8 +37,8 @@ class TestLogic(unittest.TestCase):
         if scanField(0, 0, map, solution) == 1 and scanField(1, 1, map, solution) == 0:
             self.assertTrue(True)
 
-    def test_markField(self):
-        map = [
+    def test_markField(self) -> None:
+        map: list[list[int | str]] = [
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
@@ -49,8 +49,8 @@ class TestLogic(unittest.TestCase):
         if map[0][0] == "X":
             self.assertTrue(True)
 
-    def test_getTraps(self):
-        map = [
+    def test_getTraps(self) -> None:
+        map: list[list[int | str]] = [
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
@@ -61,12 +61,12 @@ class TestLogic(unittest.TestCase):
         traps = getTraps(map)
         self.assertTrue(len(traps) > 0)
 
-    def test_getNeighbourTraps(self):
-        map = [[1, 1, 0], [1, 0, 0], [0, 0, 0]]
+    def test_getNeighbourTraps(self) -> None:
+        map: list[list[int | str]] = [[1, 1, 0], [1, 0, 0], [0, 0, 0]]
         traps = getNeighbourTraps(map, 1, 1)
         self.assertTrue(traps == 3)
 
-    def test_checkWin(self):
-        solution = [[1, 0], [0, 0]]
-        spaceship = [[0, 0], [0, 0]]
+    def test_checkWin(self) -> None:
+        solution: list[list[int | str]] = [[1, 0], [0, 0]]
+        spaceship: list[list[int | str]] = [[0, 0], [0, 0]]
         self.assertTrue(checkWin(spaceship, solution) == False)

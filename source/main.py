@@ -1,5 +1,5 @@
-import gamemap
-import logic
+import source.gamemap as gamemap
+import source.logic as logic
 
 
 def __init__(self: object) -> None:
