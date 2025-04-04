@@ -2,7 +2,7 @@ import random
 import os
 
 
-def placeTraps(spaceship):
+def placeTraps(spaceship: list[list[int | str]]) -> list[list[int | str]]:
     for i in range(len(spaceship)):
         for j in range(len(spaceship)):
             if random.randint(1, 7) == 1:
@@ -10,7 +10,7 @@ def placeTraps(spaceship):
     return spaceship
 
 
-def scanField(x, y, spaceship, solution):
+def scanField(x: int, y: int, spaceship: list[list[int | str]], solution: list[list[int | str]]) -> int:
     neighbourTraps = getNeighbourTraps(solution, x, y)
     if solution[int(x)][int(y)] == 1:
         return 1
@@ -22,12 +22,12 @@ def scanField(x, y, spaceship, solution):
         return 0
 
 
-def markField(x, y, spaceship):
+def markField(x: int, y: int, spaceship: list[list[int | str]]) -> list[list[int | str]]:
     spaceship[int(x)][int(y)] = "X"
     return spaceship
 
 
-def getTraps(spaceship):
+def getTraps(spaceship: list[list[int | str]]) -> list[tuple[int, int]]:
     traps = []
     for i in range(len(spaceship)):
         for j in range(len(spaceship)):
@@ -36,7 +36,7 @@ def getTraps(spaceship):
     return traps
 
 
-def getNeighbourTraps(spaceship, x, y):
+def getNeighbourTraps(spaceship: list[list[int | str]], x: int, y: int) -> int:
     neighbourTraps = 0
     size = len(spaceship)
     for i in range(max(0, x - 1), min(size, x + 2)):
@@ -48,14 +48,14 @@ def getNeighbourTraps(spaceship, x, y):
     return neighbourTraps
 
 
-def checkWin(spaceship, solution):
+def checkWin(spaceship: list[list[int | str]], solution: list[list[int | str]]) -> bool:
     for trap in getTraps(solution):
         if spaceship[trap[0]][trap[1]] != "X":
             return False
     return True
 
 
-def welcome():
+def welcome() -> None:
     print(
         """ 
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░      ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓██████████████▓▒░░▒▓████████▓▒░ 
@@ -63,7 +63,7 @@ def welcome():
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░ ░▒▓█▓▒░     ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
  ░▒▓█████████████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░ 
                                                                                                           
                                                                                                           """
@@ -98,7 +98,7 @@ def welcome():
     )
 
 
-def instructions():
+def instructions() -> None:
     clearTerminal()
     print(
         """\
@@ -126,7 +126,7 @@ Survive, map the traps, and escape STATION404!
     input("Press enter to continue...")
 
 
-def clearTerminal():
+def clearTerminal() -> None:
     if os.name == "nt":
         os.system("cls")
     else:

@@ -1,12 +1,12 @@
-from source import gamemap
-from source import logic
+import gamemap
+import logic
 
 
-def __init__(self):
+def __init__(self: object) -> None:
     pass
 
 
-def mainMenu():
+def mainMenu() -> None:
     print("1. Start game")
     print("2. Instructions")
     print("3. Quit")
@@ -22,11 +22,12 @@ def mainMenu():
         print("Invalid input. Please try again.")
 
 
-def main():
-    map = gamemap.map()
-    solution = gamemap.map()
-    spaceship = map.makeMap(8)
-    solution = logic.placeTraps(solution.makeMap(8))
+def main() -> None:
+    game_map = gamemap.map()
+    solution_map = gamemap.map()
+    spaceship = game_map.makeMap(8)
+    solution = solution_map.makeMap(8)
+    solution = logic.placeTraps(solution)
     playerWon = False
 
     while not logic.checkWin(spaceship, solution):
@@ -38,11 +39,11 @@ def main():
 
         if choice == "1":
             logic.clearTerminal()
-            map.printMap(spaceship)
+            game_map.printMap(spaceship)
             input("Press enter to continue...")
         elif choice == "2":
             logic.clearTerminal()
-            map.printMap(spaceship)
+            game_map.printMap(spaceship)
             y = int(input("Please enter the x coordinate: "))
             x = int(input("Please enter the y coordinate: "))
             if logic.scanField(x, y, spaceship, solution) == 1:
@@ -53,7 +54,7 @@ def main():
                 print("You didn't find a trap.")
         elif choice == "3":
             logic.clearTerminal()
-            map.printMap(spaceship)
+            game_map.printMap(spaceship)
             y = int(input("Please enter the x coordinate: "))
             x = int(input("Please enter the y coordinate: "))
             spaceship = logic.markField(x, y, spaceship)
@@ -63,6 +64,7 @@ def main():
         print("Congratulations! You won!")
     else:
         print("Thanks for playing!")
+
 
 
 if __name__ == "__main__":
