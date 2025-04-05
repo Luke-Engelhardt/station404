@@ -1,6 +1,7 @@
 from source.main import *
 import unittest
 
+# pylint: disable=all
 
 class TestMain(unittest.TestCase):
     def test_mainMenu(self) -> None:

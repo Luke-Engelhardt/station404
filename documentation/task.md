@@ -1,6 +1,6 @@
 ### Spiel: Verlassene Raumstation
 
-#### Abgabe: 31.03.2025
+#### Abgabe: 07.04.2025
 
 - Konsolenbasiertes Spiel in Python
 - Dokumentation mit Spiellogik und Metriken

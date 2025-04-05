@@ -1,12 +1,12 @@
-import source.gamemap as gamemap
-import source.logic as logic
+"""Main game module, handling user input and gameplay loop"""
+
+import sys
+import gamemap
+import logic
 
 
-def __init__(self: object) -> None:
-    pass
-
-
-def mainMenu() -> None:
+def main_menu() -> None:
+    """Main menu function to start game or show instructions"""
     print("1. Start game")
     print("2. Instructions")
     print("3. Quit")
@@ -17,58 +17,71 @@ def mainMenu() -> None:
         logic.instructions()
     elif choice == "3":
         print("Goodbye...")
-        quit()
+        sys.exit()
     else:
         print("Invalid input. Please try again.")
 
 
 def main() -> None:
-    game_map = gamemap.map()
-    solution_map = gamemap.map()
-    spaceship = game_map.makeMap(8)
-    solution = solution_map.makeMap(8)
-    solution = logic.placeTraps(solution)
-    playerWon = False
+    """Main function for gameplay loop"""
+    game_map = gamemap.Map()
+    solution_map = gamemap.Map()
+    spaceship = game_map.make_map(8)
+    solution = solution_map.make_map(8)
+    solution = logic.place_traps(solution)
+    player_won = False
 
-    while not logic.checkWin(spaceship, solution):
-        logic.clearTerminal()
+    while not logic.check_win(spaceship, solution):
+        logic.clear_terminal()
         print("1. View Spacestation")
         print("2. Scan Field")
         print("3. Mark Field")
         choice = input("Please select an option: ")
 
         if choice == "1":
-            logic.clearTerminal()
-            game_map.printMap(spaceship)
+            logic.clear_terminal()
+            game_map.print_map(spaceship)
             input("Press enter to continue...")
         elif choice == "2":
-            logic.clearTerminal()
-            game_map.printMap(spaceship)
-            y = int(input("Please enter the x coordinate: "))
-            x = int(input("Please enter the y coordinate: "))
-            if logic.scanField(x, y, spaceship, solution) == 1:
+            logic.clear_terminal()
+            game_map.print_map(spaceship)
+            try:
+                y = int(input("Please enter the x coordinate: "))
+                x = int(input("Please enter the y coordinate: "))
+                if x < 0 or x > 7 or y < 0 or y > 7:
+                    print("Invalid coordinates! Please enter numbers between 0 and 7.")
+                    continue
+            except ValueError:
+                print("Invalid input! Please enter numbers only.")
+                continue
+            if logic.scan_field(x, y, spaceship, solution) == 1:
                 print("You stepped into a trap. GAME OVER!")
                 input("Press ENTER to go back to the main menu...")
                 break
-            else:
-                print("You didn't find a trap.")
+            print("You didn't find a trap.")
         elif choice == "3":
-            logic.clearTerminal()
-            game_map.printMap(spaceship)
-            y = int(input("Please enter the x coordinate: "))
-            x = int(input("Please enter the y coordinate: "))
-            spaceship = logic.markField(x, y, spaceship)
+            logic.clear_terminal()
+            game_map.print_map(spaceship)
+            try:
+                y = int(input("Please enter the x coordinate: "))
+                x = int(input("Please enter the y coordinate: "))
+                if x < 0 or x > 7 or y < 0 or y > 7:
+                    print("Invalid coordinates! Please enter numbers between 0 and 7.")
+                    continue
+            except ValueError:
+                print("Invalid input! Please enter numbers only.")
+                continue
+            spaceship = logic.mark_field(x, y, spaceship)
         else:
             print("Invalid input. Please try again.")
-    if playerWon:
+    if player_won:
         print("Congratulations! You won!")
     else:
         print("Thanks for playing!")
 
 
-
 if __name__ == "__main__":
     logic.welcome()
     while True:
-        mainMenu()
-        logic.clearTerminal()
+        main_menu()
+        logic.clear_terminal()

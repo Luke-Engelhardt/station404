@@ -1,6 +1,7 @@
 from source.gamemap import map
 import unittest
 
+# pylint: disable=all
 
 class TestGameMap(unittest.TestCase):
     def test_makeMap(self) -> None:

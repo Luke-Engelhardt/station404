@@ -1,22 +1,29 @@
-class map:
+"""gamemap module to create and output a gamemap object"""
+
+
+class Map:
+    """gamemap class"""
+
     def __init__(self) -> None:
         self.map: list[list[int | str]] = []
 
-    def makeMap(self, size: int) -> list[list[int | str]]:
-        map: list[list[int | str]] = []
+    def make_map(self, size: int) -> list[list[int | str]]:
+        """creates a map object"""
+        grid: list[list[int | str]] = []
         for i in range(size):
-            map.append([])
-            for j in range(size):
-                map[i].append(0)
-        return map
+            grid.append([])
+            for _ in range(size):
+                grid[i].append(0)
+        return grid
 
-    def printMap(self, map: list[list[int | str]]) -> None:
-        size = len(map)
+    def print_map(self, grid: list[list[int | str]]) -> None:
+        """print map object"""
+        size = len(grid)
         print("    " + " ".join(str(i) for i in range(size)))
         border = "  " + "-" * (size * 2 + 2)
         print(border)
 
         for i in range(size):
-            print(f"{i} | {' '.join(str(x) for x in map[i])} |")
+            print(f"{i} | {' '.join(str(x) for x in grid[i])} |")
 
         print(border)

@@ -1,6 +1,7 @@
 from source.logic import *
 import unittest
 
+# pylint: disable=all
 
 class TestLogic(unittest.TestCase):
     def test_placeTraps(self) -> None:
