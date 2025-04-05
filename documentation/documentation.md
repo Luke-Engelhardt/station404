@@ -60,8 +60,8 @@ Das Spiel wird vollständig über die Konsole gesteuert und bietet folgende Elem
 ### Spielsymbole
 - [0] : Unerforschtes Feld
 - [?] : Gescanntes Feld mit Zahl (1-8) für benachbarte Fallen
-- [ ] : Gescanntes Feld ohne benachbarte Fallen
-- [X] : Markiertes Feld
+- [  ] : Gescanntes Feld ohne benachbarte Fallen
+- [ X ] : Markiertes Feld
 
 
 ### Benutzerinteraktionen
