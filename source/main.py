@@ -85,3 +85,5 @@ if __name__ == "__main__":
     while True:
         main_menu()
         logic.clear_terminal()
+#Author: Luke Engelhardt
+#Version: 1.0

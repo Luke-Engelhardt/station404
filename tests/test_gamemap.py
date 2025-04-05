@@ -38,3 +38,5 @@ class TestGameMap(unittest.TestCase):
         self.assertIn('1 0', output)
         self.assertIn('|', output)
         self.assertIn('-', output)
+#Author: Luke Engelhardt
+#Version: 1.0

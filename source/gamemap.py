@@ -27,3 +27,6 @@ class Map:
             print(f"{i} | {' '.join(str(x) for x in grid[i])} |")
 
         print(border)
+
+#Author: Luke Engelhardt
+#Version: 1.0

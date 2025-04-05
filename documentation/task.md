@@ -121,3 +121,6 @@ disallow_incomplete_defs = True
 
 - Über Exceltabelle 
 - Selbsteinschätzung muss eingetragen sein
+
+Author: Luke Engelhardt
+Version: 1.0

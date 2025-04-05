@@ -112,3 +112,5 @@ Alle Dateien haben die MyPy-Überprüfung erfolgreich bestanden:
 Success: no issues found in 3 source files
 ```
 
+Author: Luke Engelhardt
+Version: 1.0

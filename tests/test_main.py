@@ -9,3 +9,5 @@ class TestMain(unittest.TestCase):
 
     def test_main(self) -> None:
         self.assertTrue(main)  # keine tests nötig
+#Author: Luke Engelhardt
+#Version: 1.0

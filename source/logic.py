@@ -148,3 +148,5 @@ def clear_terminal() -> None:
         os.system("cls")
     else:
         os.system("clear")
+#Author: Luke Engelhardt
+#Version: 1.0

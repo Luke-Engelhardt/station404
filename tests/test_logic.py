@@ -71,3 +71,5 @@ class TestLogic(unittest.TestCase):
         solution: list[list[int | str]] = [[1, 0], [0, 0]]
         spaceship: list[list[int | str]] = [[0, 0], [0, 0]]
         self.assertTrue(check_win(spaceship, solution) == False)
+#Author: Luke Engelhardt
+#Version: 1.0
