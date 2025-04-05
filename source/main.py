@@ -1,8 +1,8 @@
 """Main game module, handling user input and gameplay loop"""
 
 import sys
-import gamemap
-import logic
+from source import gamemap
+from source import logic
 
 
 def main_menu() -> None:
